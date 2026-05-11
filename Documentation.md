@@ -35,5 +35,5 @@ In addition to the traditional password (**something you know**), users must ver
 *   **VM 2 (Web Server):** Web Application hosting.
 *   **Specifications:** 8 GB RAM and 3 CPU cores per VM.
 *   **Networking:** NAT Network for inter-VM communication.
-*   **User:** alu.
+*   **User:** alu.  
 [go to document start](README.md)
