@@ -1,10 +1,12 @@
 ## The products we are going to sell.  
 *   Videogames like:
      * <p aling="center"> AGE OF EMPIRES <img src="https://ageofnotes.com/wp-content/uploads/2023/07/aoe2_de_logo.png" width="50"> </p>
-     * <p aling="center"> Resident Evil 4 Remake <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2050650/capsule_616x353.jpg?t=1772502922" width="50"> </p> 
-## 
+     * <p aling="center"> Resident Evil 4 Remake <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2050650/capsule_616x353.jpg?t=1772502922" width="50"> </p>  
+## The web that we are going to take the products.  
+Steam was chosen as the primary source because it is the most reliable and famous platform in the gaming industry, offering an extensive catalog.
+    
 
-##  Web Server Security
+##  Web Server Security.
 
 ###  HTTPS (Hypertext Transfer Protocol Secure)
 Our research has led us to conclude that implementing a secure web server involves protecting **communications, data, and user access** to ensure the reliability of our website.
@@ -18,7 +20,7 @@ Our research has led us to conclude that implementing a secure web server involv
 
 ---
 
-###  Two-Factor Authentication (2FA)
+###  Two-Factor Authentication (2FA).
 **Two-Factor Authentication** adds a critical layer of security to every login session, drastically reducing the risk of unauthorized access.
 
 In addition to the traditional password (**something you know**), users must verify their identity through a second method (**something you have**):
