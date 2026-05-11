@@ -1,0 +1,28 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Arquitectura VM" id="JB3_DaE61Xtf57WZvymh">
+    <mxGraphModel dx="1361" dy="755" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="meZVLyf7laZhV5dOiNal-2" parent="1" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="HOST / USUARIO" vertex="1">
+          <mxGeometry height="60" width="200" x="420" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="meZVLyf7laZhV5dOiNal-3" parent="1" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="VM WEB&#xa;10.0.2.5&#xa;HTTP:80 / HTTPS:443" vertex="1">
+          <mxGeometry height="100" width="240" x="200" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="meZVLyf7laZhV5dOiNal-4" parent="1" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" value="VM BBDD&#xa;10.0.2.4&#xa;MySQL:3306" vertex="1">
+          <mxGeometry height="100" width="240" x="600" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="meZVLyf7laZhV5dOiNal-5" edge="1" parent="1" source="meZVLyf7laZhV5dOiNal-2" style="endArrow=block;" target="meZVLyf7laZhV5dOiNal-3" value="HTTP / HTTPS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="meZVLyf7laZhV5dOiNal-6" edge="1" parent="1" source="meZVLyf7laZhV5dOiNal-3" style="endArrow=block;" target="meZVLyf7laZhV5dOiNal-4" value="SQL Queries">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="meZVLyf7laZhV5dOiNal-7" edge="1" parent="1" source="meZVLyf7laZhV5dOiNal-4" style="endArrow=block;" target="meZVLyf7laZhV5dOiNal-3" value="Response Data">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
