@@ -1,6 +1,7 @@
 ## The products we are going to sell.  
 *   Videogames like:
-     * <p aling="center"> AGE OF EMPIRES <img src="https://ageofnotes.com/wp-content/uploads/2023/07/aoe2_de_logo.png" width="50"> </p>*
+     * <p aling="center"> AGE OF EMPIRES <img src="https://ageofnotes.com/wp-content/uploads/2023/07/aoe2_de_logo.png" width="50"> </p>
+     * <p aling="center"> Resident Evil 4 Remake <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2050650/capsule_616x353.jpg?t=1772502922" width="50"> </p> 
 ## 
 
 ##  Web Server Security
