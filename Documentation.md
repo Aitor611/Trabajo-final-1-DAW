@@ -1,6 +1,6 @@
-## 🛡️ Web Server Security
+##  Web Server Security
 
-### 🔒 HTTPS (Hypertext Transfer Protocol Secure)
+###  HTTPS (Hypertext Transfer Protocol Secure)
 Our research has led us to conclude that implementing a secure web server involves protecting **communications, data, and user access** to ensure the reliability of our website.
 
 *   **Encryption:** It uses **SSL/TLS** certificates to encrypt communication between the user and the server.
@@ -12,7 +12,7 @@ Our research has led us to conclude that implementing a secure web server involv
 
 ---
 
-### 🔑 Two-Factor Authentication (2FA)
+###  Two-Factor Authentication (2FA)
 **Two-Factor Authentication** adds a critical layer of security to every login session, drastically reducing the risk of unauthorized access.
 
 In addition to the traditional password (**something you know**), users must verify their identity through a second method (**something you have**):
