@@ -1,6 +1,6 @@
 ## The products we are going to sell.  
 *   Videogames like:
-     *![AGE OF EMPIRES](<img width="339" height="240" alt="imagen" src="https://github.com/user-attachments/assets/60f2dce1-958a-4207-9292-9396d8b54f87" />)   
+     *AGE OF EMPIRES   <img src="https://ageofnotes.com/wp-content/uploads/2023/07/aoe2_de_logo.png" width="200">
    
 
 ## 
