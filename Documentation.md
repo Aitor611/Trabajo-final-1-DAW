@@ -1,7 +1,7 @@
 ## The products we are going to sell.  
 *   Videogames like:
      * <p aling="center"> AGE OF EMPIRES <img src="https://ageofnotes.com/wp-content/uploads/2023/07/aoe2_de_logo.png" width="50"> </p>
-     * <p aling="center"> Resident Evil 4 Remake <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2050650/capsule_616x353.jpg?t=1772502922" width="50"> </p>  
+     * <p aling="center"> Resident Evil 4 Remake <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2050650/capsule_616x353.jpg?t=1772502922" width="50"> </p>
 ## The web that we are going to take the products.  
 Steam was chosen as the primary source because it is the most reliable and famous platform in the gaming industry, offering an extensive catalog.
     
@@ -51,13 +51,13 @@ In addition to the traditional password (**something you know**), users must ver
           * sudo /usr/pgadmin4/bin/setup-web.sh
 ## Funcional Requirements:  
 * User:
-      * The user can log in, log out and sign up.  
-      * The user can search the products.  
-      * The user can use filters to manage the products itselfs.  
+      * The user can log in, log out and sign up.
+      * The user can search the products.
+      * The user can use filters to manage the products itselfs.
 * Admin:
-      * The admin can manage the users.  
-      * The admin can upload, update and delete the products.  
-      * The admin can edit the website.  
+      * The admin can manage the users.
+      * The admin can upload, update and delete the products.
+      * The admin can edit the website.
 ## Configurate and Create DB.
 * We create the SQL DataBase and we used the relational model to make the tables.
 ## Network configuration between virtual machines.
