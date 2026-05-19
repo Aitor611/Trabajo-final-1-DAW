@@ -48,7 +48,8 @@ In addition to the traditional password (**something you know**), users must ver
           * sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/noble pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
           * sudo apt install pgadmin4
     * To configurate the web server we used this one:
-          * sudo /usr/pgadmin4/bin/setup-web.sh
+          * sudo /usr/pgadmin4/bin/setup-web.sh  
+      
 ## Funcional Requirements:  
 * User:
       * The user can log in, log out and sign up.  
