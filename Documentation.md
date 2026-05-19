@@ -35,5 +35,31 @@ In addition to the traditional password (**something you know**), users must ver
 *   **VM 2 (Web Server):** Web Application hosting.
 *   **Specifications:** 8 GB RAM and 3 CPU cores per VM.
 *   **Networking:** NAT Network for inter-VM communication.
-*   **User:** alu.  
+*   **User:** alu.
+## Installation of PostgreSQL and PgAdmin4.
+* **Postgres**: 
+    * For the installation of postgres we used this following commands:
+          * apt install postgresql
+    * To make the repository configuration we used this ones:
+          * sudo apt install -y postgresql-common
+          * sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh precise
+* **PgAdmin4**:
+    * For the installation of pgadmin4 we used this following commands:
+          * sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/noble pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
+          * sudo apt install pgadmin4
+    * To configurate the web server we used this one:
+          * sudo /usr/pgadmin4/bin/setup-web.sh
+## Funcional Requirements:  
+* User:
+      * The user can log in, log out and sign up.
+      * The user can search the products.
+      * The user can use filters to manage the products itselfs
+* Admin:
+      * The admin can manage the users.
+      * The admin can upload, update and delete the products.
+      * The admin can edit the website.
+## Configurate and Create DB.
+* We create the SQL DataBase and we used the relational model to make the tables.
+## Network configuration between virtual machines.
+* We used a private network to connect the two virtual machines. In this case, the website virtual machine has a NAT adapter to access the internet, but the database virtual machine is only on the private network. We configured PostgreSQL using nano to accept more IP addresses. We used two custom IPs for easier management, and through an SQL command, we were able to connect the website to the database.  
 [go to document start](README.md)
