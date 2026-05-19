@@ -51,13 +51,13 @@ In addition to the traditional password (**something you know**), users must ver
           * sudo /usr/pgadmin4/bin/setup-web.sh
 ## Funcional Requirements:  
 * User:
-      * The user can log in, log out and sign up.
-      * The user can search the products.
-      * The user can use filters to manage the products itselfs
+      * The user can log in, log out and sign up.  
+      * The user can search the products.  
+      * The user can use filters to manage the products itselfs.  
 * Admin:
-      * The admin can manage the users.
-      * The admin can upload, update and delete the products.
-      * The admin can edit the website.
+      * The admin can manage the users.  
+      * The admin can upload, update and delete the products.  
+      * The admin can edit the website.  
 ## Configurate and Create DB.
 * We create the SQL DataBase and we used the relational model to make the tables.
 ## Network configuration between virtual machines.
