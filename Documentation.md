@@ -62,5 +62,10 @@ In addition to the traditional password (**something you know**), users must ver
 ## Configurate and Create DB.
 * We create the SQL DataBase and we used the relational model to make the tables.
 ## Network configuration between virtual machines.
-* We used a private network to connect the two virtual machines. In this case, the website virtual machine has a NAT adapter to access the internet, but the database virtual machine is only on the private network. We configured PostgreSQL using nano to accept more IP addresses. We used two custom IPs for easier management, and through an SQL command, we were able to connect the website to the database.  
+* We used a private network to connect the two virtual machines. In this case, the website virtual machine has a NAT adapter to access the internet, but the database virtual machine is only on the private network. We configured PostgreSQL using nano to accept more IP addresses. We used two custom IPs for easier management, and through an SQL command, we were able to connect the website to the database.
+## The Scrapping Process:
+* First of all, we started this process by searching and reading the proper information in the respective pages of beautiful soup and nginx . 
+  Then, as we had decided earlier, we used the “Steam” website to extract the information that we wanted, these being parameters like the game's name, date of release and more.
+  Later, we started to make the scrapping program in python and also made some configurations on the main database and also we configured the website with nginx. 
+
 [go to document start](README.md)
