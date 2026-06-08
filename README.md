@@ -1,10 +1,9 @@
-# Final-Internship-Project-1-DAW
-# Introduction
+# Project Documentation: Static Steam Catalog
+## Overview
 
-We are going to work on this project the days that we will be at center during the internship period.  
+This project implements a static product catalog for Steam games. Data is extracted from Steam using web scraping with Python, Requests, and BeautifulSoup. Products are stored in a PostgreSQL database on a dedicated virtual machine. A static site generator written in Python reads the database and generates HTML, CSS, and JavaScript files. The static site is served by Nginx on another virtual machine. The catalog includes pagination, live search, and product images.
 
-This project focuses on developing a video game store using **Steam** products extracted via **Python scraping**.  
-The infrastructure relies on two **Linux Mint** machines (Web and DB) secured with **HTTPS** and two-factor authentication (**2FA**).
+## Team and Product
+The team consists of Pablo, Sofía, and Aitor. The chosen product category is video games from Steam. The data source is the Steam search page.
 
-Made by Pablo, Sofía, Aitor.  
 [go to documentation](Documentation.md)
