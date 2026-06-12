@@ -62,14 +62,6 @@ The extraction component is a script developed in **Python** tasked with gatheri
 A Python script acts as a static generator, processing data from the database and transforming it into a production-ready web interface.
 The script reads the records from the database, renders the templates, and packages all the content inside the `/output` directory.
 
-```text
-Project
-└── output/
-    ├── index.html        <- Main catalog with a product grid
-    ├── products/         <- Individual detail pages for each game
-    └── static/           <- CSS styles and JS scripts copied automatically
-```
-
 ---
 
 ## 6. Frontend Features
