@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Steam Catalog - Static</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Steam Catalog</h1>
+        <p>Static catalog with images</p>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search game...">
+            <button id="clearBtn" class="clear-btn">Clear</button>
+        </div>
+        <div id="searchInfo" class="search-info"></div>
+    </header>
+    <div class="product-grid" id="productGrid">
+        {% for prod in products %}
+        <div class="product-card" data-name="{{ prod[1]|lower }}">
+            {% if prod[4] %}
+                <img src="{{ prod[4] }}" alt="{{ prod[1] }}" class="product-image">
+            {% else %}
+                <div class="product-image-placeholder">No image</div>
+            {% endif %}
+            <div class="product-info">
+                <h2 class="product-name">{{ prod[1] }}</h2>
+                <p class="product-price">{{ prod[2] if prod[2] else "Free" }}</p>
+                <p class="product-date">Release: {{ prod[3] if prod[3] else "Unknown" }}</p>
+                <a href="product_{{ prod[0] }}.html" class="btn-detail">View details</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="pagination" id="paginationControls">
+        <button id="prevPage" disabled>Previous</button>
+        <span id="pageInfo">Page 1</span>
+        <button id="nextPage">Next</button>
+    </div>
+    <footer>Data from Steam · Static site generator</footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
