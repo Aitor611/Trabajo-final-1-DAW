@@ -15,6 +15,7 @@ Our architecture relies on a distributed model utilizing **two virtual machines 
 Both virtual machines share the same base operating system and hardware specifications, configured within the same subnet using a **Host-Only** or **NAT Network** adapter.
 
 ### Hardware Specifications (Per VM)
+
 | Component | Specification |
 | :--- | :--- |
 | **Operating System** | Linux Mint 22.3 Cinnamon |
