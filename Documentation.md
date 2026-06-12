@@ -1,34 +1,118 @@
-## Architecture
-Our architecture uses two virtual machines connected via a private network. The host machine runs development tools and the browser. The web virtual machine runs Nginx and serves the static files. The database virtual machine runs PostgreSQL. Communication between the virtual machines occurs over internal IP addresses. We have included a diagram in the repository.
+# Project Documentation: Architecture and Web Deployment
 
-## Virtual Machines Setup
-Both virtual machines run Linux Mint 22.3 Cinnamon. The database VM has 1 GB of RAM, 10 GB of disk, and two CPU cores. The web VM has the same specifications. We assigned each VM a static IP address in the same subnet to allow communication. The network is configured as Host-Only or NAT Network. Our installation process included setting up the operating system, creating a regular user, and verifying network connectivity.
+## 1. System Architecture
+Our architecture relies on a distributed model utilizing **two virtual machines (VMs)** interconnected via a private virtual network.
 
-## Database (PostgreSQL)
-We installed PostgreSQL on the database VM. We created a database and a dedicated user. The products table contains columns for id, product name, price, release date, and image URL. The scraper automatically creates the table. We enabled remote access by modifying PostgreSQL configuration files to listen on all interfaces and accept connections from the private network. We restarted the service after making changes.
+* **Host Machine:** Houses the development tools and the web browser for testing.
+* **Web VM:** Runs an **Nginx** server responsible for serving the static files of the website.
+* **Database VM:** Hosts the **PostgreSQL** engine where all the data is stored.
 
-## Scraping (Data Extraction)
-Our scraper is written in Python and uses the Requests library to fetch Steam search pages and BeautifulSoup to parse the HTML. It extracts the title, price, release date, and image URL for each game. The scraper iterates through search result pages, collecting up to 200 games. The extracted data is stored in the PostgreSQL table. We added a short delay between requests to avoid overloading the server. The scraper can be run from any machine that has network access to the database.
+> **Note:** Communication between both virtual machines occurs exclusively over their internal IP addresses. A detailed infrastructure diagram is included in the repository.
 
-## Static Site Generator
-The generator is a Python script that connects to the database, reads all products, and produces a complete static website. It creates an index.html file with a grid of product cards. It also creates individual detail pages for each product. The generator copies external style and script files from a static folder into the output directory. The output is organized inside a folder named "output". We run the generator after the database has been populated.
+---
 
-## Frontend Features
-Our website includes pagination showing nine products per page with previous and next buttons. A live search input allows filtering products by name as the user types. A clear button resets the search. Product images are displayed in the cards and on the detail pages; images are centered and maintain their aspect ratio. The design is responsive, adapting to different screen sizes, and uses a dark color scheme inspired by Steam.
+## 2. Virtual Machines Setup
+Both virtual machines share the same base operating system and hardware specifications, configured within the same subnet using a **Host-Only** or **NAT Network** adapter.
 
-## Web Server (Nginx)
-We installed Nginx on the web virtual machine. We configured the default server block to listen on port 80, set the document root to the directory containing the static files, and specified index.html as the default file. After copying the generated website files into the document root, we reloaded Nginx to serve the new content.
+### Hardware Specifications (Per VM)
+| Component | Specification |
+| :--- | :--- |
+| **Operating System** | Linux Mint 22.3 Cinnamon |
+| **RAM Memory** | 1 GB |
+| **Storage** | 10 GB Hard Disk |
+| **Processor** | 2 CPU Cores |
 
-## Deployment Instructions
-First, we set up the virtual machines with the described network configuration. Second, we installed and configured PostgreSQL on the database VM. Third, we ran the scraper to populate the database. Fourth, we ran the generator to create the static files inside the output folder. Fifth, we copied the entire content of the output folder to the Nginx document root on the web VM. Finally, we reloaded Nginx and accessed the site using the web VM's IP address from a browser.
+### Initialization Process
+1. Base operating system installation.
+2. Creation of a regular user with standard privileges.
+3. Assignment of **static IP addresses** within the same network range.
+4. Network connectivity verification using ping tests.
 
-## Security Notes
-We researched HTTPS and two-factor authentication but did not implement them because the site is static and runs on a local network for educational purposes. For a production environment, HTTPS should be enabled with Let's Encrypt, and firewall rules should restrict database access to trusted IP addresses. We recommend using strong passwords and the principle of least privilege.
+---
 
-## Troubleshooting
-If the image_url column is missing from the database, we can add it with an SQL command. If Nginx returns a 404 error, we verify the document root. If images do not appear, we check that the scraper collected the image URLs. If CSS or JavaScript files are not loaded, we ensure they exist in the output folder and that the paths in the HTML are correct. If pagination or search does not work, we verify that the script.js file is properly included and that the product cards have the required data attributes.
+## 3. Database (PostgreSQL)
+PostgreSQL was installed and configured on the **Database VM**. The scraping script handles the automatic generation of the database schema.
 
-## Repository and Documentation
-Our GitHub repository contains all source code and this documentation. The documentation is published via GitHub Pages. We will submit a PDF with screenshots of the process, configuration, and final website as required.
+### `products` Table Structure
+* `id` (Primary Key)
+* `product_name` (Game Title)
+* `price` (Price)
+* `release_date` (Release Date)
+* `image_url` (Link to the image asset)
+
+### Remote Access Configuration
+To allow the website and the scraper to connect, PostgreSQL configuration files were modified to:
+* Listen on all network interfaces (`listen_addresses = '*'`).
+* Accept external connections originating from the private network range.
+* *The service was restarted after applying these changes.*
+
+---
+
+## 4. Scraping (Data Extraction)
+The extraction component is a script developed in **Python** tasked with gathering information from the Steam store.
+
+* **Technologies:** `Requests` (for HTTP requests) and `BeautifulSoup` (for HTML parsing).
+* **Workflow:** It iterates through the search result pages until collecting a **maximum of 200 games**.
+* **Best Practices:** A short delay was implemented between requests to avoid overloading the target server.
+* **Flexibility:** The scraper can be executed from any machine that has network access to the PostgreSQL database.
+
+---
+
+## 5. Static Site Generator (SSG)
+A Python script acts as a static generator, processing data from the database and transforming it into a production-ready web interface.
+The script reads the records from the database, renders the templates, and packages all the content inside the `/output` directory.
+
+---
+
+## 6. Frontend Features
+The user interface has been designed drawing inspiration from Steam's visual aesthetics, prioritizing responsiveness and user experience:
+
+* **Pagination:** Displays exactly **9 products per page** with navigation buttons (`Previous` / `Next`).
+* **Live Search:** Real-time product filtering by name as the user types, including a clear button to reset the search.
+* **Visual Design:** Adaptable layout (*Responsive Design*) with a dark color scheme (*Dark Mode*). Product images are centered and always maintain their original aspect ratio.
+
+---
+
+## 7. Web Server (Nginx)
+The **Web VM** utilizes Nginx optimized for high-performance static content delivery.
+
+* **Port:** Listens on the standard port `80`.
+* **Document Root:** Points directly to the local directory where the static files are hosted.
+* **Default File:** Configured to resolve `index.html` automatically.
+* **Update:** After moving the files to the root directory, an Nginx service *reload* is executed to apply changes without server downtime.
+
+---
+
+## 8. Deployment Instructions
+Follow this strict order to deploy the project from scratch:
+
+---
+
+## 9. Security Notes
+> **Project Context:** Since this is a purely educational and local environment, features such as HTTPS or two-factor authentication (2FA) were not implemented in this phase.
+
+If this environment were to be moved to **Production**, the following measures should be applied:
+* Enable **HTTPS** using valid certificates via *Let's Encrypt*.
+* Configure strict **Firewall** rules to restrict database access exclusively to trusted IP addresses.
+* Implement robust password policies and the **principle of least privilege** for all system users.
+
+---
+
+## 10. Troubleshooting
+
+| Symptom / Error | Probable Cause | Suggested Solution |
+| :--- | :--- | :--- |
+| Missing `image_url` column | Outdated database table | Add the column manually using SQL commands (`ALTER TABLE`). |
+| Nginx **404 Not Found** Error | Incorrect path configuration | Verify the *Document Root* directive inside the Nginx configuration file. |
+| Images do not appear | Data extraction failure | Check if the scraper successfully saved the image URLs into the database. |
+| CSS or JS styles fail to load | Broken links | Ensure that the files exist in `/output` and that their relative paths in the HTML are correct. |
+| Search or pagination doesn't work | Script integration error | Verify that `script.js` is properly included and that the product cards have the required data attributes. |
+
+---
+
+## 11. Repository and Documentation
+* **Source Code:** All source code and this documentation are centralized in our GitHub repository.
+* **Web Access:** The documentation is publicly available via **GitHub Pages**.
+* **Submission:** A complementary PDF document will be submitted, including screenshots of the entire setup process, executed commands, and the final look of the website.
 
 [go to document start](README.md)
