@@ -85,7 +85,12 @@ The **Web VM** utilizes Nginx optimized for high-performance static content deli
 
 ## 8. Deployment Instructions
 Follow this strict order to deploy the project from scratch:
-
+1. **Step 1:** Spin up the VMs and configure the internal network.
+2. **Step 2:** Install and configure PostgreSQL on the Database VM.
+3. **Step 3:** Run the Python Scraper to populate the database.
+4. **Step 4:** Run the Static Generator to create the `/output` folder.
+5. **Step 5:** Transfer the entire content of `/output` to the Nginx Document Root on the Web VM.
+6. **Step 6:** Reload Nginx and access the site using the Web VM's IP address.
 ---
 
 ## 9. Security Notes
