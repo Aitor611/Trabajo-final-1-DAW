@@ -1,9 +1,21 @@
 # Project Documentation: Static Steam Catalog
-## Overview
 
-This project implements a static product catalog for Steam games. Data is extracted from Steam using web scraping with Python, Requests, and BeautifulSoup. Products are stored in a PostgreSQL database on a dedicated virtual machine. A static site generator written in Python reads the database and generates HTML, CSS, and JavaScript files. The static site is served by Nginx on another virtual machine. The catalog includes pagination, live search, and product images.
+---
+
+## Overview
+This project implements a **static product catalog** for Steam games. The system operates through an automated pipeline distributed across a virtualized infrastructure:
+
+* **Data Extraction:** Data is extracted from Steam using web scraping powered by **Python**, `Requests`, and `BeautifulSoup`.
+* **Storage:** Extracted products are stored in a **PostgreSQL** database hosted on a dedicated virtual machine.
+* **Site Generation:** A **Static Site Generator (SSG)** written in Python reads the database to generate production-ready HTML, CSS, and JavaScript files.
+* **Web Serving:** The final static site is served by **Nginx** running on a separate virtual machine.
+* **User Interface:** The catalog features interactive elements such as client-side **pagination**, **live search**, and responsive product images.
+
+---
 
 ## Team and Product
-The team consists of Pablo, Sofía, and Aitor. The chosen product category is video games from Steam. The data source is the Steam search page.
+* **Development Team:** Pablo, Sofía, and Aitor.
+* **Product Category:** Video games from Steam.
+* **Data Source:** Official Steam search pages.
 
 [go to documentation](Documentation.md)
