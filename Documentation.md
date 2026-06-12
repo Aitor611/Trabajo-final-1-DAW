@@ -16,12 +16,12 @@ Both virtual machines share the same base operating system and hardware specific
 
 ### Hardware Specifications (Per VM)
 
-| Component | Specification |
-| :--- | :--- |
-| **Operating System** | Linux Mint 22.3 Cinnamon |
-| **RAM Memory** | 1 GB |
-| **Storage** | 10 GB Hard Disk |
-| **Processor** | 2 CPU Cores |
+| Component | Specification |  
+| :--- | :--- |  
+| **Operating System** | Linux Mint 22.3 Cinnamon |  
+| **RAM Memory** | 1 GB |  
+| **Storage** | 10 GB Hard Disk |  
+| **Processor** | 2 CPU Cores |  
 
 ### Initialization Process
 1. Base operating system installation.
