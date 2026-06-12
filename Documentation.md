@@ -113,11 +113,5 @@ If this environment were to be moved to **Production**, the following measures s
 | CSS or JS styles fail to load | Broken links | Ensure that the files exist in `/output` and that their relative paths in the HTML are correct. |
 | Search or pagination doesn't work | Script integration error | Verify that `script.js` is properly included and that the product cards have the required data attributes. |
 
----
-
-## 11. Repository and Documentation
-* **Source Code:** All source code and this documentation are centralized in our GitHub repository.
-* **Web Access:** The documentation is publicly available via **GitHub Pages**.
-* **Submission:** A complementary PDF document will be submitted, including screenshots of the entire setup process, executed commands, and the final look of the website.
 
 [go to document start](README.md)
