@@ -14,7 +14,7 @@ def save_to_db(games):
             port=5432
         )
         cursor = connection.cursor()
-        # Add image_url column
+      
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS products (
                 id SERIAL PRIMARY KEY,
@@ -71,24 +71,24 @@ def extract_games():
         game_blocks = soup.find_all("a", class_="search_result_row")
         
         for block in game_blocks:
-            # Title
+      
             title_tag = block.find("span", class_="title")
             title = title_tag.text.strip() if title_tag else "No title"
             
-            # Price
+  
             price_tag = block.find("div", class_="discount_prices")
             price = price_tag.text.strip().replace('\n', ' ') if price_tag else "Free or no price"
             
-            # Release date
+   
             date_tag = block.find("div", class_="search_released responsive_secondrow")
             release_date = date_tag.text.strip() if date_tag else "No release date"
             
-            # Image
+  
             img_tag = block.find("img", class_="search_capsule")
             if img_tag and img_tag.get('src'):
                 image_url = img_tag['src']
             else:
-                # fallback: any img inside the block
+               
                 img_fallback = block.find("img")
                 image_url = img_fallback['src'] if img_fallback and img_fallback.get('src') else ""
             
